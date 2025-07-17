@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Schichtplaner</title>
+</head>
+<body>
+    <h1>🛡️ Schichtplaner für Sicherheitsunternehmen</h1>
+
+    <form method="POST">
+        <label>Name:</label><br>
+        <input type="text" name="name" placeholder="z.B. Ali"><br><br>
+
+        <label>Wochentag:</label><br>
+        <input type="text" name="day" placeholder="z.B. Montag"><br><br>
+
+        <label>Uhrzeit:</label><br>
+        <input type="text" name="time" placeholder="z.B. 08:00 - 16:00"><br><br>
+
+        <button type="submit">💾 Schicht speichern</button>
+    </form>
+
+    <hr>
+
+    <h2>📋 Geplante Schichten</h2>
+    <ul>
+        {% for schicht in shifts %}
+            <li>{{ schicht.name }} – {{ schicht.day }} – {{ schicht.time }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
